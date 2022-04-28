@@ -14,10 +14,31 @@ mydb = mysql.connector.connect(
   database="SpotsUsers"
 )
 
+# mycursor = mydb.cursor()
+
+# sql = "INSERT INTO users (username, fullname, dob, pronouns, email, abt, datejoined) VALUES (%s, %s, %s, %s, %s, %s, %s)"
+# val = ("johndoe101", "John", "January 2nd, 1998", "he/him", "john@doe.com", "likes pies", timestamp)
+# mycursor.execute(sql, val)
+
+# mydb.commit()
+
+# print(mycursor.rowcount, "record inserted.")
+
+# mycursor = mydb.cursor()
+
+# sql = "INSERT INTO users (username, fullname, dob, pronouns, email, abt, datejoined) VALUES (%s, %s, %s, %s, %s, %s, %s)"
+# val = ("naaafis", "Abeer", "January 20, 2000", "he/him", "nafis@doe.com", "likes pasta", timestamp)
+# mycursor.execute(sql, val)
+
+# mydb.commit()
+
+# print(mycursor.rowcount, "record inserted.")
+
+
 mycursor = mydb.cursor()
 
-sql = "INSERT INTO users (id, fullname, dob, pronouns, email, abt, datejoined) VALUES (%s, %s, %s, %s, %s, %s, %s)"
-val = (1, "John", "January 2nd, 1998", "he/him", "john@doe.com", "likes pies", timestamp)
+sql = "INSERT INTO user_friend (username, username_friend) VALUES (%s, %s)"
+val = ("johndoe101", "naaafis")
 mycursor.execute(sql, val)
 
 mydb.commit()

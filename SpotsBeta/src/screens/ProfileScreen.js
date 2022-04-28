@@ -5,31 +5,26 @@ class ProfileScreen extends Component{
   constructor(props){
     super(props);
     this.state = {
-      userID: '',
-      name: '',
-      data: [],
+      username: '',
+      fullname: '',
       dob: '',
       pronouns: '',
       email: '',
-      password: '',
       abt: '',
-      date_joined: '2022-03-04',
     };
-    this.useridChange = this.useridChange.bind(this);
-    this.nameChange = this.nameChange.bind(this);
+    this.usernameChange = this.usernameChange.bind(this);
+    this.fullnameChange = this.fullnameChange.bind(this);
     this.dobChange = this.dobChange.bind(this);
     this.pronounsChange = this.pronounsChange.bind(this);
     this.emailChange = this.emailChange.bind(this);
-    this.passwordChange = this.passwordChange.bind(this);
     this.abtChange = this.abtChange.bind(this);
-    this.date_joinedChange = this.date_joinedChange.bind(this);
   }
   
-  useridChange(userID){
-    this.setState({userID});
+  usernameChange(username){
+    this.setState({username});
   }
-  nameChange(name){
-    this.setState({name});
+  fullnameChange(fullname){
+    this.setState({fullname});
   }
   dobChange(dob){
     this.setState({dob});
@@ -40,14 +35,8 @@ class ProfileScreen extends Component{
   emailChange(email){
     this.setState({email});
   }
-  passwordChange(password){
-    this.setState({password});
-  }
   abtChange(abt){
     this.setState({abt});
-  }
-  date_joinedChange(date_joined){
-    this.setState({date_joined});
   }
 
 
@@ -113,17 +102,17 @@ class ProfileScreen extends Component{
       method: 'POST',
       headers: {Accept: 'application/json'  , 'Content-Type': 'application/json' },
       body: JSON.stringify(
-        {fullname: this.state.name,
+        {
+        username: this.state.username,
+        fullname: this.state.fullname,
         dob: this.state.dob,
         pronouns: this.state.pronouns,
         email: this.state.email,
-        password: this.state.password,
         abt: this.state.abt,
-        datejoined: this.state.date_joined
-      }
+        }
       ),
     };
-    fetch('http://18.219.228.229:3000/profile', requestOptions) //elastic ip.. cool.
+    fetch('http://155.41.53.23:5000/adduser', requestOptions) //elastic ip.. cool.
       .then(response => response.json())
       .then(data => {
         console.log(JSON.stringify(data))
@@ -154,21 +143,21 @@ class ProfileScreen extends Component{
         <View style={{alignItems: 'center'}}>
           <Text style={style.title}>Profile</Text>
         </View>
-        <Text style={style.label}>userID</Text>
+        <Text style={style.label}>Username</Text>
         <TextInput
           style={style.label}
-          placeholder="Choose a user ID" 
-          value = {this.state.userID}
-          onChangeText = {this.useridChange}
+          placeholder="Choose a username" 
+          value = {this.state.username}
+          onChangeText = {this.usernameChange}
         />
-        <Text style={style.label}>Name</Text>
+        <Text style={style.label}>Fullname</Text>
         <TextInput
           style={style.label}
-          placeholder="Enter your name here" 
-          value = {this.state.name}
-          onChangeText = {this.nameChange}
+          placeholder="Enter your full name here" 
+          value = {this.state.fullname}
+          onChangeText = {this.fullnameChange}
         />
-        <Text style={style.label}>DOB (yyyy-mm-dd)</Text>
+        <Text style={style.label}>DOB (mm-dd-yyyy)</Text>
         <TextInput
           style={style.label}
           placeholder="Enter your date of birth here"
@@ -189,36 +178,15 @@ class ProfileScreen extends Component{
           value = {this.state.email}
           onChangeText = {this.emailChange}
         />
-        <Text style={style.label}>Password</Text>
+        <Text style={style.label}>About</Text>
         <TextInput
           style={style.label}
-          placeholder="Enter your Password here" 
-          value = {this.state.password}
-          onChangeText = {this.passwordChange}
-        />
-        {/* <Text style={style.label}>Dog Name</Text>
-        <TextInput
-        style={style.label}
-        placeholder="Enter your dog name here"
-        value = {this.state.dog_name}
-        onChangeText = {this.dog_nameChange}
-        />
-        <Text style={style.label}>Dog Breed</Text>
-        <TextInput
-          style={style.label}
-          placeholder="Enter your dogbreed here" 
-          value = {this.state.dog_breed}
-          onChangeText = {this.dog_breedChange}
-        /> */}
-        <Text style={style.label}>About Section</Text>
-        <TextInput
-          style={style.label}
-          placeholder="Enter your description here" 
+          placeholder="Enter something about yourself here" 
           value = {this.state.abt}
           onChangeText = {this.abtChange}
         />
         <Button
-          title = "Register"
+          title = "Submit"
           onPress= {() => this.getInfo(this.state.name)}
           color='blue'
         />

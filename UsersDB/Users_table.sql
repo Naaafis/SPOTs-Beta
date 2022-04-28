@@ -2,20 +2,19 @@ CREATE DATABASE IF NOT EXISTS spotsusers;
 USE spotsusers;
 
 CREATE TABLE IF NOT EXISTS users (
-  id int UNIQUE,
+  username VARCHAR(255) PRIMARY KEY NOT NULL, 
   fullname varchar(255),
   dob varchar(255),
   pronouns varchar(255),
   email varchar(255),
   abt varchar(255),
-  datejoined TIMESTAMP,
-  CONSTRAINT id PRIMARY KEY (id)
+  datejoined TIMESTAMP
 );
 
 
 CREATE TABLE IF NOT EXISTS user_friend (
-  id_user int UNIQUE,
-  id_friend int UNIQUE,
-  CONSTRAINT id_user FOREIGN KEY (id_user) REFERENCES users(id),
-  CONSTRAINT id_friend FOREIGN KEY (id_friend) REFERENCES users(id)
+  username varchar(255) NOT NULL,
+  username_friend varchar(255) NOT NULL,
+  CONSTRAINT fk_username FOREIGN KEY (username) REFERENCES users(username),
+  CONSTRAINT fk_username_friend FOREIGN KEY (username_friend) REFERENCES users(username)
 );
