@@ -204,7 +204,8 @@ class MapScreen extends Component {
 
 } //end of App
 
-// Currently the map is not being rendered based off of the markers.
+// Currently the map is not being rendered based off of the markers
+
 // function doAuthRequest(clientId, name) {
 //   let status;
 //   return fetch('http://localhost:3000/auth', {
