@@ -29,13 +29,13 @@ def addfriends():
   mycursor = mydb.cursor()
 
   sql = "INSERT INTO user_friend (username, username_friend) VALUES (%s, %s)"
-  val = ("johndoe101", "naaafis")
+  val = (username, username_friend)
   mycursor.execute(sql, val)
 
   mydb.commit()
 
   print(mycursor.rowcount, "record inserted.")
   
-  return "Friend added"
+  return "Friend added" 
   
   

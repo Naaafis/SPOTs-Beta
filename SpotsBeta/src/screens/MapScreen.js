@@ -204,26 +204,27 @@ class MapScreen extends Component {
 
 } //end of App
 
-function doAuthRequest(clientId, name) {
-  let status;
-  return fetch('http://localhost:3000/auth', {
-    method: 'POST',
-    headers: {
-      'Accept': 'application/json',
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({clientId, name}),
-  }).then(res => {
-    status = res.status;
-    return res.text();
-  }).then(text => {
-    if (status === 200) {
-      return text;
-    } else {
-      alert(text);
-    }
-  }).catch(error => console.error(error));
-}
+// Currently the map is not being rendered based off of the markers.
+// function doAuthRequest(clientId, name) {
+//   let status;
+//   return fetch('http://localhost:3000/auth', {
+//     method: 'POST',
+//     headers: {
+//       'Accept': 'application/json',
+//       'Content-Type': 'application/json',
+//     },
+//     body: JSON.stringify({clientId, name}),
+//   }).then(res => {
+//     status = res.status;
+//     return res.text();
+//   }).then(text => {
+//     if (status === 200) {
+//       return text;
+//     } else {
+//       alert(text);
+//     }
+//   }).catch(error => console.error(error));
+// }
 
 const styles = StyleSheet.create({
   container: {
