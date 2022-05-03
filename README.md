@@ -77,14 +77,14 @@ brew services start mongodb-community
 
 Currently there are the following screens, and source codes:
 
-Home Screen: /SpotsBeta/src/screens/HomeScreen.js
-Registration Screen: /SpotsBeta/src/screens/RegistrationScreen.js
-Login Screen: /SpotsBeta/src/screens/LoginScreen.js
-MainMenuScreen: /SpotsBeta/src/screens/MainMenuScreen.js
-Profile Screen: /SpotsBeta/src/screens/ProfileScreen.js
-Add Friends Screen: /SpotsBeta/src/screens/AddFriendsScreen.js
-Chat Screen: /SpotsBeta/src/screens/ChatScreen.js
-Map Screen: /SpotsBeta/src/screens/MapScreen.js
+- Home Screen: /SpotsBeta/src/screens/HomeScreen.js
+- Registration Screen: /SpotsBeta/src/screens/RegistrationScreen.js
+- Login Screen: /SpotsBeta/src/screens/LoginScreen.js
+- MainMenuScreen: /SpotsBeta/src/screens/MainMenuScreen.js
+- Profile Screen: /SpotsBeta/src/screens/ProfileScreen.js
+- Add Friends Screen: /SpotsBeta/src/screens/AddFriendsScreen.js
+- Chat Screen: /SpotsBeta/src/screens/ChatScreen.js
+- Map Screen: /SpotsBeta/src/screens/MapScreen.js
 
 To deploy the front end:
 
