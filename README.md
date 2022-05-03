@@ -18,6 +18,17 @@ How to modify mySQL database with custom table:
 ```bash
 mysql -u root -p [YOURDATABSENAME] < [SCHEMA].sql      
 ```
+To view mySQL databases:
+
+```bash
+mysql -u root -p
+[PASSWORD]
+SHOW DATABASES
+USE spotsusers
+SHOW TABLES
+SELECT * FROM users
+SELECT * FROM user_friend
+```
 
 Deployment:
 
