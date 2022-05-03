@@ -7,9 +7,7 @@ import {RegistrationScreen} from './src/screens/RegistrationScreen';
 import {LoginScreen} from './src/screens/LoginScreen';
 import {MainMenuScreen} from './src/screens/MainMenuScreen';
 import {ProfileScreen} from './src/screens/ProfileScreen';
-import {FriendsScreen} from './src/screens/FriendsScreen';
 import {AddFriendsScreen} from './src/screens/AddFriendsScreen';
-import {ViewProfileScreen} from './src/screens/ViewProfileScreen';
 import {MapScreen} from './src/screens/MapScreen';
 import {ChatScreen} from './src/screens/ChatScreen';
 
@@ -25,9 +23,7 @@ class App extends Component{
           <Stack.Screen name="Login" component={LoginScreen} />
           <Stack.Screen name="Main Menu" component={MainMenuScreen} />
           <Stack.Screen name="Edit Profile" component={ProfileScreen} />
-          <Stack.Screen name="Friends" component={FriendsScreen} />
           <Stack.Screen name="Add Friends" component={AddFriendsScreen} />
-          <Stack.Screen name="View Profile" component={ViewProfileScreen} />
           <Stack.Screen name="Map" component={MapScreen} />
           <Stack.Screen name="Chat" component={ChatScreen} />
         </Stack.Navigator>

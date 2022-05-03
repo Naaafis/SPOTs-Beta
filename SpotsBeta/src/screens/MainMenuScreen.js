@@ -7,8 +7,6 @@ class MainMenuScreen extends Component{
       <View style={{flex: 1, alignItems: 'center'}}>
         <Text style={style.title}>Main Menu</Text>
         <Button title="Edit Profile" onPress={() => this.props.navigation.push('Edit Profile')} />
-        <Button title="View Profile" onPress={() => this.props.navigation.push('View Profile')} />
-        <Button title="Friends" onPress={() => this.props.navigation.push('Friends')} />
         <Button
           title="Add Friends"
           onPress={() => this.props.navigation.push('Add Friends')}

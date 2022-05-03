@@ -23,6 +23,7 @@ col = db["messages"]
 #     {'sender': 'sender_name', 'recipient': 'recipient_name', 'message': 'message_body'}
     
 # ]
+#
 
 def check_message(inp): 
     #this function just makes sure that the body of a message is is a string
@@ -71,7 +72,7 @@ def get_all_messages():
         return check_users(users)
 
 @app.route("/messages", methods=['POST'])
-def add_device():
+def add_message():
     new_message = request.get_json()
     if check_message(new_message) == "Valid Message":
         #message_collection.append(request.get_json())

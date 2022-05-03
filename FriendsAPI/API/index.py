@@ -1,7 +1,4 @@
 import mysql.connector
-import time 
-import datetime
-
 
 mydb = mysql.connector.connect(
   host="localhost",
@@ -18,9 +15,6 @@ app = Flask(__name__)
 @app.route("/addfriends", methods= ['POST'])
 def addfriends():
   
-  ts=time.time()
-  timestamp = datetime.datetime.fromtimestamp(ts).strftime('%Y-%m-%d %H:%M:%S')
-  
   incoming_json = request.get_json()
   
   username = incoming_json['username']
@@ -36,6 +30,5 @@ def addfriends():
 
   print(mycursor.rowcount, "record inserted.")
   
-  return "Friend added" 
-  
+  return jsonify({"message": "Friend added"})
   
